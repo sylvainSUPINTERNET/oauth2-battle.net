@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import defaultValues from "../default/values";
 
-import {AllCountriesConfiguration} from "../default/blizzardApi"
+import {OAuth2CodeFlowConfiguration} from "../default/blizzardApi"
 
 const OAuth2BnetComponent = ( { btnText } : IOAuth2BtnProps) => {
 
@@ -10,9 +10,11 @@ const OAuth2BnetComponent = ( { btnText } : IOAuth2BtnProps) => {
     } = defaultValues;
 
     useEffect( () => {
-        let t = new AllCountriesConfiguration("eu");
-        console.log(t.name);
-        console.log(t.getAuthorization());
+        let oauth2Conf = new OAuth2CodeFlowConfiguration("eu", ["wow.profile", "sc2.profile"]);
+        console.log(oauth2Conf.regionName);
+        console.log(oauth2Conf.getScopes());
+        console.log(oauth2Conf.getAuthorizationUri());
+        console.log(oauth2Conf.getTokenUri());
     }, [])
 
     return (
