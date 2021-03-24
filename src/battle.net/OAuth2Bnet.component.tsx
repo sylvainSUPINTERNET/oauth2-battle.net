@@ -4,7 +4,7 @@ import BattleNetIcon from '../battlenet.svg';
 
 import {OAuth2CodeFlowConfiguration} from "../default/blizzardApi"
 
-const OAuth2BnetComponent = ( { btnText } : IOAuth2BtnProps) => {
+const OAuth2BnetComponent = ( { btnText, logoStyle, linkStyle, containerStyle } : IOAuth2BtnProps) => {
 
     const [bnetOAuth2Clinet, setBnetOAuth2Clinet] = useState<OAuth2CodeFlowConfiguration>();
 
@@ -26,10 +26,12 @@ const OAuth2BnetComponent = ( { btnText } : IOAuth2BtnProps) => {
     return (
      <div>
 
-        <div>
-            <a href={bnetOAuth2Clinet?.getAuthorizeURL()}>
-                <img src={BattleNetIcon} style={{"width": "3%", "height": "auto", "verticalAlign": "middle"}} alt="battle.net logo" />
-                    {btnText && btnText !== "" ? btnText : BTN_DEFAULT_TEXT}
+        <div style={containerStyle}>
+            <a href={bnetOAuth2Clinet?.getAuthorizeURL()} style={linkStyle}>
+                <img src={BattleNetIcon} style={logoStyle} alt="battle.net logo" />
+                
+                {btnText && btnText !== "" ? btnText : BTN_DEFAULT_TEXT}
+
             </a>
         </div>
 
@@ -40,6 +42,9 @@ const OAuth2BnetComponent = ( { btnText } : IOAuth2BtnProps) => {
 
   interface IOAuth2BtnProps {
     btnText: string;
+    logoStyle?: any;
+    linkStyle?: any;
+    containerStyle?: any;
 }
 
   export default OAuth2BnetComponent;
