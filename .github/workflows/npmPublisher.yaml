@@ -19,6 +19,6 @@ jobs:
     - run: npm version patch
     - run: npm publish
     - name: Commit & Push
-      uses: 
+      uses: actions-js/push@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
