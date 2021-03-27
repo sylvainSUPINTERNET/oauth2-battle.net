@@ -5,6 +5,7 @@
     "type": "git",
     "url": "https://github.com/sylvainSUPINTERNET/oauth2-battle.net"
   },
+  "keywords": ["react", "blizzard", "oauth","oauth2","access","token","api","blizzard API", "wow", "sc","diablo"],
   "license": "MIT",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
