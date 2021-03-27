@@ -8,6 +8,15 @@
 
 
 ``` javascript
+        import OAuth2BnetComponent from "oauth2-battle.net/src/battle.net/OAuth2Bnet.component";
+
+        // ...
+
+        <OAuth2BnetComponent>
+        
+        </OAuth2BnetComponent>
+
+
         let OAuth2BattleNetClient = new OAuth2CodeFlowConfiguration({
             "regionName" : "eu", // Could be another scopes, please check to know existing regions : https://develop.battle.net/documentation/guides/using-oauth
             "scopes" : ["wow.profile"], // Could be another scopes, please check to know existing scopes : https://develop.battle.net/documentation/guides/using-oauth
