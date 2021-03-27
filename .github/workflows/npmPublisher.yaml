@@ -6,12 +6,16 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [10.x, 12.x, 14.x, 15.x]
+    
     steps:
     - name: "Checkout"
       uses: actions/checkout@v2
+
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 15
+        registry-url: 'https://registry.npmjs.org'
+
 
     - name: Minimal git conf
       run: git config --global user.email "sylvain.joly00@orange.fr" && git config --global user.name "sylvainSUPINTERNET"
@@ -22,7 +26,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - run: npm version patch
-    - run: npm publish
+    - run: npm publish --access public
       env:
         NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
