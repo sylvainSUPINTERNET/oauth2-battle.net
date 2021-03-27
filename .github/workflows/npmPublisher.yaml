@@ -1,0 +1,25 @@
+name: "oauth2-battle.net package CI"
+on:
+  push: # if you merge pull request from dev to master, consider as "push"
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x, 14.x, 15.x]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Update version
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+    - run: npm version patch
+    - run: npm publish
+    - name: Commit & Push
+      uses: 
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
