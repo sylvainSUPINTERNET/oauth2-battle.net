@@ -9,4 +9,13 @@ Backend is not required
 
 **Integration example** ( Get access token and how to call Blizzard API )
 
-https://github.com/sylvainSUPINTERNET/oauth2-battle.net/blob/master/src/App.tsx
+``` javascript
+
+import OAuth2BnetComponent from "oauth2-battle.net/src/battle.net/OAuth2Bnet.component";
+
+// ...
+
+// Integration example : https://github.com/sylvainSUPINTERNET/oauth2-battle.net/blob/master/src/App.tsx (get access token + request Blizzard API to get item detail)
+
+```
+
