@@ -22,6 +22,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - run: npm version patch
+    - run: npm update
     - run: npm publish
 
     - name: Commit & Push
