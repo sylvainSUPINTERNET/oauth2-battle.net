@@ -23,7 +23,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "build-ts": "npx tsc",
+    "build-ts": "tsc",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
