@@ -25,6 +25,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install typescript -g
+    - run: npm install --save typescript @types/node @types/react @types/react-dom @types/jest
     - run: npm run build-ts
     - run: npm ci
     - run: npm version patch #--no-git-tag-version
