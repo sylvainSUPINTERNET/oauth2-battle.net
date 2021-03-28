@@ -36,6 +36,7 @@
   },
   "scripts": {
     "build-ts": "tsc",
+    "pubblish-npm": "tsc && cp ./src/battlenet.svg ./dist/battle.net/ && npm version patch --no-git-tag-version && npm publish --access public",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
